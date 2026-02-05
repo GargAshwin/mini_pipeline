@@ -1,0 +1,19 @@
+name: Mini Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t mini-pipeline .
+
+      - name: Run tests in container
+        run: docker run --rm mini-pipeline
