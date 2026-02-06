@@ -5,7 +5,7 @@ class FlightTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.df = pd.read_csv('output.csv')
+        cls.df = pd.read_csv('sample.csv')
 
     def test_rows(self):
         self.assertGreaterEqual(len(self.df), 2)
